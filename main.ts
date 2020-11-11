@@ -1,16 +1,12 @@
 basic.forever(function () {
-    for (let I = 0; I <= 1; I++) {
-        for (let j = 0; j <= 2; j++) {
-            if (2 - j == 2) {
-                led.plot(2, 2)
-            } else {
-                led.plot(2 - j, 2)
-                led.plot(2, 2 - j)
-                led.plot(2, 2 + j)
-                led.plot(2 + j, 2)
+    for (let y = 0; y <= 2; y++) {
+        for (let x = 0; x <= 2; x++) {
+            if (2 - x == 2 || 2 - (y - x) == 2) {
+                led.plot(2 + x, 2 + (y - x))
+                led.plot(2 - x, 2 - (y - x))
             }
-            basic.pause(500)
         }
+        basic.pause(500)
     }
     basic.pause(500)
     basic.clearScreen()
