@@ -1,17 +1,17 @@
-let x1: number;
-let x2: ?212;
-let xx = 2
-let yy = 2
-for (let i = 0; i < 1; i++) {
-    for (let j = 0; j < 3; j++) {
-        x1 = xx - j
-        x2 = xx + j
+basic.forever(function () {
+    for (let I = 0; I <= 1; I++) {
+        for (let j = 0; j <= 2; j++) {
+            if (2 - j == 2) {
+                led.plot(2, 2)
+            } else {
+                led.plot(2 - j, 2)
+                led.plot(2, 2 - j)
+                led.plot(2, 2 + j)
+                led.plot(2 + j, 2)
+            }
+            basic.pause(500)
+        }
     }
-    if (x1 == x2) {
-        led.plot(x1, yy)
-    } else {
-        [led.plot(x1, yy), [x2, yy], [yy, x1], [yy, x2]]
-    }
-    
-    xx += 1
-}
+    basic.pause(500)
+    basic.clearScreen()
+})
